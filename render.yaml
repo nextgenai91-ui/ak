@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: openserp
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: OPENSERP_SERVER_HOST
+        value: "0.0.0.0"
+      - key: OPENSERP_SERVER_PORT
+        value: "10000"
